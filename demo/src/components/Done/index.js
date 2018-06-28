@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 
 import Done from "./Done";
-import { removeTodo } from "../../redux/todos/actionsCreators";
+import { removeTodo } from "../../state/todos/actionsCreators";
 
 const mapStateToProps = state => {
   return {

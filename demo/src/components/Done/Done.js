@@ -3,7 +3,7 @@ import React from "react";
 const Done = props => {
   const { todos, removeTodo } = props;
   return (
-    <div className="todolist">
+    <div className="segment">
       <h2>DONE</h2>
       <ul id="done-items" className="list-unstyled">
         {todos.filter(todo => todo.done).map((todo, i) => (

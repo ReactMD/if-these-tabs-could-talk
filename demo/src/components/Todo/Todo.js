@@ -1,6 +1,6 @@
-import React from "react";
+import React, { PureComponent } from "react";
 
-export default class Todo extends React.Component {
+export default class Todo extends PureComponent {
   state = {
     todoInput: "",
     selectedTodoIds: []
@@ -48,7 +48,7 @@ export default class Todo extends React.Component {
     const { todos } = this.props;
     const todosToDo = todos.filter(todo => !todo.done);
     return (
-      <div className="todolist not-done">
+      <div className="segment">
         <h2>TODO</h2>
         <input
           type="text"
@@ -58,24 +58,22 @@ export default class Todo extends React.Component {
           value={todoInput}
           onChange={this.handleChange}
         />
-        {!!selectedTodoIds.length && (
+        {!!selectedTodoIds.length &&
           <button
             id="checkAll"
             className="btn btn-success"
             onClick={this.markDone}
           >
             Mark Selected Items Done
-          </button>
-        )}{" "}
-        {!!todosToDo.length && (
+          </button>}{" "}
+        {!!todosToDo.length &&
           <button
             id="checkAll"
             className="btn btn-primary"
             onClick={this.markAllDone}
           >
             Mark All Done
-          </button>
-        )}
+          </button>}
         <hr />
         <ul id="sortable" className="list-unstyled">
           {todosToDo.map((todo, i) => (
